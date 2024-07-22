@@ -1,0 +1,33 @@
+class Friend {
+  //feilds
+  String name = "";
+  int age = 0;
+  double weight = 0.0;
+
+  //methodes
+  void printData() {
+    print("My name is $name and age is $age and my weight is $weight");
+  }
+}
+
+void main() {
+  //creating objects from the class Friend (samin)
+  Friend samin = Friend();
+  //feilds
+  samin.name = "samin";
+  samin.age = 20;
+  samin.weight = 25.4;
+
+  //methods
+  samin.printData();
+
+  //creating objects from the class Friend (kamal)
+  Friend nimal = Friend();
+  //feilds
+  nimal.name = "nimal";
+  nimal.age = 22;
+  nimal.weight = 35.4;
+
+  //methods
+  nimal.printData();
+}
