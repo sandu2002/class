@@ -1,0 +1,30 @@
+class Dog {
+  //feilds
+  String? name;
+  String? breed;
+  double? weight;
+
+  //consteuctor
+
+  Dog(String dogName, String dogBreed, double dogWeight) {
+    this.name = dogName;
+    this.breed = dogBreed;
+    this.weight = dogWeight;
+  }
+
+  //method
+  void bark() {
+    print("woof woof");
+  }
+
+  void printInfo() {
+    print("your dog name is $name breed is $breed and weight is $weight");
+  }
+}
+
+void main() {
+  //create the objects
+  Dog dog1 = Dog("Tommy", "German Sherpherd", 20.25);
+
+  dog1.printInfo();
+}
