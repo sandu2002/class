@@ -1,0 +1,59 @@
+class Car {
+  // Fields
+  String? brand;
+  String? model;
+  int? year;
+  double _fuelLevel;
+
+  // Constructor
+  Car(this._fuelLevel, {required this.brand, required this.model, required this.year});
+
+  // Methods
+
+  // Get fuel
+  double getFuel() {
+    return _fuelLevel;
+  }
+
+  // Display info
+  void displayInfo() {
+    print("Your car brand is $brand, the model is $model, and the year is $year.");
+  }
+
+  // Refuel
+  dynamic refuel({required double refillAmount}) {
+    if (refillAmount > 0) {
+      _fuelLevel += refillAmount;
+      return _fuelLevel;
+    } else {
+      return "The entered refill fuel amount is invalid.";
+    }
+  }
+
+  // Drive method
+  void drive({required double distance}) {
+    if (distance > 0) {
+      double fuelConsumed = distance / 20;
+      print("To travel a distance of $distance, you need $fuelConsumed units of fuel.");
+      if (fuelConsumed > _fuelLevel) {
+        print("Insufficient fuel!");
+      } else {
+        _fuelLevel -= fuelConsumed;
+        print("$fuelConsumed units of fuel burned and ${_fuelLevel} units of fuel remaining.");
+      }
+    } else {
+      print("Invalid distance.");
+    }
+  }
+}
+
+void main() {
+  // Car object
+  Car car1 = Car(120, brand: "Toyota", model: "Corolla", year: 2003);
+  print("Initial fuel level: ${car1.getFuel()}");
+  car1.displayInfo();
+  print("Fuel level after refueling: ${car1.refuel(refillAmount: 210)}");
+  car1.drive(distance: 230.1);
+  print("Fuel level after driving: ${car1.getFuel()}");
+}
+
