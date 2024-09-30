@@ -1,0 +1,45 @@
+class MathsOperations {
+  //feilds
+  static int additionCount = 0;
+  static int subtractionCount = 0;
+  static int multiplitionCount = 0;
+  static int divisionCount = 0;
+
+  //methodes
+  static double add(double a, double b) {
+    additionCount++;
+    return a + b;
+  }
+
+  static double subtraction(double a, double b) {
+    subtractionCount++;
+    return a + b;
+  }
+
+  static double multiplition(double a, double b) {
+    multiplitionCount++;
+    return a + b;
+  }
+
+  static double division(double a, double b) {
+    if (b > 0) {
+      divisionCount++;
+      return a / b;
+    } else {
+      return double.nan;
+    }
+  }
+
+  void main() {
+    MathsOperations.add(10, 100);
+    MathsOperations.subtraction(100, 10);
+    MathsOperations.multiplition(100, 10);
+    MathsOperations.division(10, 100);
+    MathsOperations.division(10, 100);
+
+    print(MathsOperations.additionCount);
+    print(MathsOperations.subtractionCount);
+    print(MathsOperations.multiplitionCount);
+    print(MathsOperations.divisionCount);
+  }
+}
