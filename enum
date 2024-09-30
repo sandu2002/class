@@ -1,0 +1,31 @@
+enum statusCode {
+  success,
+  error,
+  warning,
+  info,
+}
+
+void main() {
+  statusCode code = statusCode.error;
+
+  switch (code) {
+    case statusCode.success:
+      print("the status is success");
+      break;
+
+    case statusCode.error:
+      print("the status is error");
+      break;
+
+    case statusCode.warning:
+      print("the status is warning");
+      break;
+
+    case statusCode.info:
+      print("the status is info");
+      break;
+
+    default:
+      print("invalid");
+  }
+}
