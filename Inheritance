@@ -1,0 +1,49 @@
+//Person class this is a Parent class
+class Person {
+  String name = '';
+  int age = 15;
+
+  void sleep() {
+    print("$name is sleeping");
+  }
+}
+
+//Student is s child class the inharits from the Person class
+class Student extends Person {
+  int grade = 10;
+
+  //study
+  void study() {
+    print("$name is studying");
+  }
+}
+
+//Teacher  is s child class the inharits from the Person class
+class Teacher extends Person {
+  String school = "";
+
+  //teach
+  void teach() {
+    print("$name is teaching");
+  }
+}
+
+void main() {
+  //creating objects
+  var student = Student();
+  student.name = "samin";
+  student.age = 30;
+  student.grade = 10;
+
+  var teacher = Teacher();
+  teacher.name = "samin";
+  teacher.age = 30;
+  teacher.school = "Ds";
+
+  student.sleep();
+  student.study();
+
+  teacher.sleep();
+
+  teacher.teach();
+}
