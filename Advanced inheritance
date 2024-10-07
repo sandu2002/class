@@ -1,0 +1,61 @@
+//Parent class
+
+class Animal {
+  //feilds
+  String _name;
+  //constructors
+  Animal(this._name);
+
+  //getter
+  String get name => _name;
+  //methods
+  void eat() {
+    print("${this._name} is eating");
+  }
+
+  void makesound() {
+    print("Animal makes sound");
+  }
+
+  void canJump(int? height) {
+    print("Animal can jump $height");
+  }
+}
+
+//child class
+
+class Dog extends Animal {
+  String _breed;
+
+  //constructors
+  Dog(this._breed, String name) : super(name);
+
+  void fetch() {
+    print("Dog fetches a ball");
+  }
+
+  @override
+  void makesound() {
+    print("Dog makes sound");
+  }
+
+  @override
+  void canJump(int? height) {
+    if (height == null) {
+      print("dog can jump 2m onlu");
+    } else {
+      super.canJump(5);
+    }
+  }
+
+  // Main function outside the class
+  //objects
+  void main() {
+    var dog = Dog("Golden rock", "Tom");
+    dog.eat();
+    print("Breed: ${dog._breed}");
+
+    dog.makesound();
+    dog.canJump(10);
+  }
+}
